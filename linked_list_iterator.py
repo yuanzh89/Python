@@ -11,6 +11,9 @@ class NodeIterator:
         self.node = self.node.next
         return n
 
+    def __iter__(self):
+        return self
+
 class Node:
     def __init__(self, val: int, next: 'Node' = None):
         self.val = val
