@@ -2,6 +2,8 @@ class NodeIterator:
     def __init__(self, node: 'Node'):
         self.node = node
 
+    # Maintains the state of iteration
+    # Returns the next object in the iterable
     def __next__(self):
         if self.node is None:
             raise StopIteration
@@ -15,6 +17,7 @@ class Node:
         self.next = next
 
     def __iter__(self):
+        # Returns an object of its iterator
         return NodeIterator(self)
 
 def main():
